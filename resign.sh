@@ -1,7 +1,7 @@
 #!/bin/bash
 
-KEY_PAIR=${PORT_ROOT}/build/res-build/oppo-security/platform
-SIGN_APK=${PORT_ROOT}/tools/signapk.jar
+KEY_PAIR=${PORT_TOOLS}/keys/platform
+SIGN_APK=${PORT_TOOLS}/signapk.jar
 PEMKEY=${KEY_PAIR}.x509.pem
 PK8KEY=${KEY_PAIR}.pk8
 
