@@ -2,8 +2,8 @@
 
 # $1: the android smali code  $2: the color smali code $3: the destination smali code
 
-if [ $# -ne 3 ];then
-	echo -e "USAGE:\tpatchcolor.sh android_smali_dir color_smali_dir dst_smali_dir"
+if [ $# -ne 4 ];then
+	echo -e "USAGE:\tpatchcolor.sh android_smali_dir color_smali_dir dst_smali_dir sourcechange.txt"
 	echo -e "\tAll the above need to be absolute path"
 	exit
 fi
@@ -18,7 +18,7 @@ temp_color_smali_dir=$temp_dir/color_smali
 temp_dst_smali_orig_dir=$temp_dir/dst_smali_orig
 temp_dst_smali_patched_dir=$temp_dir/dst_smali_patched
 reject_dir=$temp_dir/reject
-SOURCE_CHANGE_TXT=${PORT_ROOT}/smali/sourcechange.txt
+SOURCE_CHANGE_TXT=$4
 dst_orig_dir=${PWD}/.orig
 
 rm -rf $temp_dir
