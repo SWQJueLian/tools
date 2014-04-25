@@ -53,6 +53,16 @@ function find_changed_files() {
 		done
 
 	done
+	
+	for file in `find $1 -path "*/oppo/*"`
+	do
+		file_path=${file%/*}
+		real_file_path=${file_path#*$1}
+		echo "${file_path}------${real_file_path}"
+		mkdir -p $1.change/${real_file_path}
+		mv ${file} $1.change/${real_file_path}
+	done
+	
 	mv $1 $1.nochange
 	mv $1.change $1
 }
@@ -109,8 +119,8 @@ function apply_color_patch() {
 
 apply_color_patch
 
-cd ${color_smali_dir}
-find ./ -name "oppo" -type d | xargs -i cp -rf {} ${dst_smali_dir}/{}
+#cd ${color_smali_dir}
+#find ./ -name "oppo" -type d | xargs -i cp -rf {} ${dst_smali_dir}/{}
 cp -r $dst_smali_dir $temp_dst_smali_patched_dir
 
 cd $temp_dst_smali_orig_dir
