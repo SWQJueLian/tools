@@ -3,7 +3,8 @@
 PWD=`pwd`
 SMALI=${PORT_TOOLS}/smali
 BAKSMALI=${PORT_TOOLS}/baksmali
-OUT_SMALI=${PORT_ROOT}/device/smali_out
+# Better support for multiple models directory by jl
+OUT_SMALI=${PORT_DEVICE}/smali_out
 #SIGNAPK_JAR=${PORT_TOOLS}/signapk.jar
 #SIGNAPK=${PORT_TOOLS}/sign.sh
 #KEYPATH=${PORT_BUILD}/res-build/oppo-security
